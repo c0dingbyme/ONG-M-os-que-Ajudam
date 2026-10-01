@@ -1,0 +1,19 @@
+{
+  "name": "maos-que-ajudam",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.19.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "measure": "node scripts/measure-build.mjs",
+    "measure:images": "node scripts/measure-images.mjs",
+    "verify": "pnpm run build && pnpm run measure && pnpm run measure:images"
+  },
+  "devDependencies": {
+    "html-minifier-terser": "^7.2.0",
+    "vite": "^8.0.0"
+  }
+}

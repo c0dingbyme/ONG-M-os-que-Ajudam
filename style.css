@@ -1,0 +1,360 @@
+/* ========================================
+   VARIÁVEIS DE CORES
+   ======================================== */
+
+:root {
+    --cor-primaria: #2E7D32;
+    --cor-primaria-hover: #1B5E20;
+    --cor-secundaria: #81C784;
+
+    --cor-fundo: #FFFFFF;
+    --cor-fundo-secundario: #F5F5F5;
+    --cor-texto: #212121;
+    --cor-texto-secundario: #616161;
+    --cor-borda: #D9D9D9;
+}
+
+
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+   ======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   TIPOGRAFIA
+   ======================================== */
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+
+/* ========================================
+   HEADER
+   ======================================== */
+
+header {
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+    padding: 20px;
+    text-align: center;
+}
+
+
+/* ========================================
+   NAVEGAÇÃO - FLEXBOX
+   ======================================== */
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--cor-fundo);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--cor-secundaria);
+}
+
+.menu-toggle {
+    display: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid #FFD54F;
+    outline-offset: 3px;
+}
+
+
+/* ========================================
+   GRID PRINCIPAL - 12 COLUNAS
+   ======================================== */
+
+main {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+/* ========================================
+   SEÇÕES
+   ======================================== */
+
+section {
+    grid-column: span 12;
+    padding: 20px;
+    background-color: var(--cor-fundo-secundario);
+}
+
+
+/* ========================================
+   INDEX
+   ======================================== */
+
+#sobre {
+    grid-column: span 8;
+}
+
+#contato {
+    grid-column: span 4;
+}
+
+
+/* ========================================
+   IMAGENS
+   ======================================== */
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.imagem-destaque {
+    display: block;
+    width: min(100%, 678px);
+    margin: 1.25rem auto 0;
+}
+
+.imagem-destaque img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+
+/* ========================================
+   FORMULÁRIO
+   ======================================== */
+
+form {
+    grid-column: span 12;
+}
+
+fieldset {
+    border: 1px solid var(--cor-borda);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    max-width: 100%;
+    padding: 8px;
+    border: 1px solid var(--cor-borda);
+}
+
+button {
+    padding: 10px 16px;
+    border: none;
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--cor-primaria-hover);
+}
+
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+footer {
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* ========================================
+   BREAKPOINT 1 - 1200 PX
+   ======================================== */
+
+@media (max-width: 1200px) {
+
+    main {
+        max-width: 100%;
+    }
+
+}
+
+
+/* ========================================
+   BREAKPOINT 2 - 992 PX
+   ======================================== */
+
+@media (max-width: 992px) {
+
+    #sobre {
+        grid-column: span 12;
+    }
+
+    #contato {
+        grid-column: span 12;
+    }
+
+}
+
+
+/* ========================================
+   BREAKPOINT 3 - 768 PX
+   ======================================== */
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: inline-block;
+    }
+
+    .menu-links {
+        display: none;
+    }
+
+    .menu-links.menu-aberto {
+        display: flex;
+        flex-direction: column;
+    }
+
+    main {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    section,
+    #sobre,
+    #contato,
+    form {
+        grid-column: span 6;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+/* ========================================
+   BREAKPOINT 4 - 576 PX
+   ======================================== */
+
+@media (max-width: 576px) {
+
+    main {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    section,
+    #sobre,
+    #contato,
+    form {
+        grid-column: span 1;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+}
+
+
+/* ========================================
+   BREAKPOINT 5 - 400 PX
+   ======================================== */
+
+@media (max-width: 400px) {
+
+    main {
+        padding: 5px;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+}
+
+/* ========================================
+   VALIDAÇÃO DO FORMULÁRIO
+======================================== */
+
+.campo-invalido {
+    border: 2px solid red;
+}
+
+.mensagem-erro {
+    color: #B71C1C;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.cadastro-item {
+    border: 1px solid var(--cor-borda);
+    border-radius: 4px;
+    margin-top: 1rem;
+    padding: 1rem;
+}
